@@ -977,33 +977,27 @@ footer{background:var(--deep);padding:56px 80px 28px;}
       <div class="contact-form-block">
         <h3>Send Us a Message</h3>
         <p>Fill in the form and our trade specialist will contact you shortly.</p>
-         <form action="https://formsubmit.co/srivaarahi.it@gmail.com" method="POST">
-    <!-- Hidden settings -->
-    <input type="hidden" name="_subject" value="New Enquiry from Website">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_template" value="table">
-        <div class="form-row">
-          <div class="form-group"><label>First Name *</label><input type="text" name="first_name" placeholder="John" required></div>
-          <div class="form-group"><label>Last Name *</label><input type="text" name="last_name" placeholder="Smith" required></div>
-    </div>
+         <div class="form-row">
+          <div class="form-group"><label>First Name *</label><input type="text" id="fname" placeholder="John"/></div>
+          <div class="form-group"><label>Last Name *</label><input type="text" id="lname" placeholder="Smith"/></div>
         </div>
         <div class="form-row">
-          <div class="form-group"><label>Email Address *</label><input type="email" name="email" placeholder="john@company.com"required></div>
-          <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="+1 234 567 8900"></div>
+          <div class="form-group"><label>Email Address *</label><input type="email" id="email" placeholder="john@company.com"/></div>
+          <div class="form-group"><label>Phone Number</label><input type="tel" id="phone" placeholder="+1 234 567 8900"/></div>
         </div>
         <div class="form-row">
-          <div class="form-group"><label>Company Name</label><input type="text" name="company" placeholder="Your Company Ltd."/></div>
-          <div class="form-group"><label>Country</label><select name="country"><option value="">Select Country...</option><option>United States</option><option>United Kingdom</option><option>United Arab Emirates</option><option>Australia</option><option>Canada</option><option>Germany</option><option>Japan</option><option>China</option><option>Singapore</option><option>Saudi Arabia</option><option>Other</option></select></div>
+          <div class="form-group"><label>Company Name</label><input type="text" id="company" placeholder="Your Company Ltd."/></div>
+          <div class="form-group"><label>Country</label><select id="country"><option value="">Select Country...</option><option>United States</option><option>United Kingdom</option><option>United Arab Emirates</option><option>Australia</option><option>Canada</option><option>Germany</option><option>Japan</option><option>China</option><option>Singapore</option><option>Saudi Arabia</option><option>Other</option></select></div>
         </div>
         <div class="form-group"><label>Product Category of Interest</label>
           <select id="product"><option value="">Select Category...</option><option>Rice &amp; Basmati</option><option>Fresh Vegetables</option><option>Fresh Fruits</option><option>Spices &amp; Masala</option><option>Tea &amp; Coffee</option><option>Herbal Products</option><option>Millets &amp; Superfoods</option><option>Grains &amp; Pulses</option><option>Packaged Foods</option><option>Textiles &amp; Cloth</option><option>Engineering Goods</option><option>Other Products</option><option>Multiple Categories</option></select>
         </div>
-        <div class="form-group"><label>Message / Requirements *</label><textarea name="message" placeholder="Please describe your requirements, quantities needed, destination country, and any specific certifications required..."></textarea></div>
+        <div class="form-group"><label>Message / Requirements *</label><textarea id="message" placeholder="Please describe your requirements, quantities needed, destination country, and any specific certifications required..."></textarea></div>
         <div class="form-submit">
           <p class="form-note"><i class="fas fa-lock" style="color:var(--gold);margin-right:4px;"></i> Your info is secure &amp; never shared.</p>
-          <!-- IMPORTANT: remove onclick --><button type="submit" class="btn-gold"><i class="fas fa-paper-plane"></i> Send Message</button>
+          <button class="btn-gold" onclick="submitForm()"><i class="fas fa-paper-plane"></i> Send Message</button>
         </div>
-        <div id="form-success"><i class="fas fa-check-circle" style="color:#059669;margin-right:7px;"></i> Thank you! Your message has been sent.</div>
+        <div id="form-success"><i class="fas fa-check-circle" style="color:#059669;margin-right:7px;"></i> Thank you! Your message has been sent. Our team will contact you within 24 hours.</div>
       </div>
     </div>
   </div>
