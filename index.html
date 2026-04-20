@@ -867,7 +867,7 @@ footer{background:var(--deep);padding:56px 80px 28px;}
       <div class="cat-products-grid">
         <div class="cat-item"><div class="cat-item-img"><img src="https://raw.githubusercontent.com/svitwebsite/svitwebpage/refs/heads/main/Apparel/Cotton%20Saree.jpg?w=400&h=200&fit=crop" alt="Cotton Saree"/></div><div class="cat-item-info"><h4>Cotton Saree</h4><p>Elegant and comfortable cotton sarees made from premium-quality fabric. Known for their softness, breathability, and traditional appeal.</p></div><div class="cat-item-footer"><span>Min. 100 pcs</span><button class="btn-sm" onclick="showPage('contact', document.querySelectorAll('#navLinks button')[4])">Enquire</button></div></div>
         <div class="cat-item"><div class="cat-item-img"><img src="https://raw.githubusercontent.com/svitwebsite/svitwebpage/refs/heads/main/Apparel/Silk%20Saree.jpg?w=400&h=200&fit=crop" alt="Silk Saree"/></div><div class="cat-item-info"><h4>Silk Saree</h4><p>Premium silk sarees known for their rich texture, shine, and traditional appeal. Perfect for special occasions and cultural wear.</p></div><div class="cat-item-footer"><span>Min. 100 pcs</span><button class="btn-sm" onclick="showPage('contact', document.querySelectorAll('#navLinks button')[4])">Enquire</button></div></div>
-        <div class="cat-item"><div class="cat-item-img"><img src="https://raw.githubusercontent.com/svitwebsite/svitwebpage/refs/heads/main/Apparel/Mens%20Shirt%20%26%20Dhoti.jpg?w=400&h=200&fit=crop" alt="Mens Shirt & Dhoti"/></div><div class="cat-item-info"><h4></p>Mens Shirt & Dhoti</h4><p>High-quality men’s shirts and traditional dhotis made from fine fabrics. Designed for comfort, style, and cultural significance.</p></div><div class="cat-item-footer"><span>Min. 100 pcs</span><button class="btn-sm" onclick="showPage('contact', document.querySelectorAll('#navLinks button')[4])">Enquire</button></div></div>
+        <div class="cat-item"><div class="cat-item-img"><img src="https://raw.githubusercontent.com/svitwebsite/svitwebpage/refs/heads/main/Apparel/Mens%20Shirt%20%26%20Dhoti.jpg?w=400&h=200&fit=crop" alt="Mens Shirt & Dhoti"/></div><div class="cat-item-info"><h4>Mens Shirt & Dhoti</h4><p>High-quality men’s shirts and traditional dhotis made from fine fabrics. Designed for comfort, style, and cultural significance.</p></div><div class="cat-item-footer"><span>Min. 100 pcs</span><button class="btn-sm" onclick="showPage('contact', document.querySelectorAll('#navLinks button')[4])">Enquire</button></div></div>
         <div class="cat-item"><div class="cat-item-img"><img src="https://raw.githubusercontent.com/svitwebsite/svitwebpage/refs/heads/main/Apparel/T%20shirts.jpg?w=400&h=200&fit=crop" alt="T shirts"/></div><div class="cat-item-info"><h4>T shirts</h4><p>Comfortable and stylish t-shirts made from soft, breathable fabric. Available in various sizes, colors, and designs.</p></div><div class="cat-item-footer"><span>Min. 200 pcs</span><button class="btn-sm" onclick="showPage('contact', document.querySelectorAll('#navLinks button')[4])">Enquire</button></div></div>
         <div class="cat-item"><div class="cat-item-img"><img src="https://raw.githubusercontent.com/svitwebsite/svitwebpage/refs/heads/main/Apparel/Cotton%20Towel.jpg?w=400&h=200&fit=crop" alt="Cotton Towel"/></div><div class="cat-item-info"><h4>Cotton Towel</h4><p>Soft and absorbent cotton towels made from premium fibers. Designed for durability and everyday use.</p></div><div class="cat-item-footer"><span>Min. 200 pcs</span><button class="btn-sm" onclick="showPage('contact', document.querySelectorAll('#navLinks button')[4])">Enquire</button></div></div>
         <div class="cat-item"><div class="cat-item-img"><img src="https://raw.githubusercontent.com/svitwebsite/svitwebpage/refs/heads/main/Apparel/Kitchen%20Cloth.jpg?w=400&h=200&fit=crop" alt="Kitchen Cloth"/></div><div class="cat-item-info"><h4>Kitchen Cloth</h4><p>Durable and highly absorbent kitchen cloths designed for daily use. Easy to wash.</p></div><div class="cat-item-footer"><span>Min. 500 pcs</span><button class="btn-sm" onclick="showPage('contact', document.querySelectorAll('#navLinks button')[4])">Enquire</button></div></div>
@@ -979,7 +979,7 @@ footer{background:var(--deep);padding:56px 80px 28px;}
           <h3>Send Us a Message</h3>
           <p>Fill in the form and our trade specialist will contact you shortly.</p>
 
-          <form action="https://formsubmit.co/7dc1ae70f7a1f3e9304af4efbc918f4f" method="POST">
+          <form id="contactForm">
 
               <!-- Hidden settings -->
               <input type="hidden" name="_subject" value="New Enquiry from Website">
@@ -1072,9 +1072,7 @@ footer{background:var(--deep);padding:56px 80px 28px;}
 
           </form>
 
-
-
-          <input type="hidden" name="_next" value="https://www.svitindia.com/">
+                    
           <div id="form-success">
               <i class="fas fa-check-circle" style="color:#059669;margin-right:7px;"></i>
               Thank you! Your message has been sent.
@@ -1125,6 +1123,36 @@ function startAuto(){clearInterval(slideTimer);goToSlide(curSlide);slideTimer=se
 startAuto();
 function showCat(panelId,btn){document.querySelectorAll('.category-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.cat-tab').forEach(t=>t.classList.remove('active'));document.getElementById(panelId).classList.add('active');btn.classList.add('active');}
 function submitForm(){const fname=document.getElementById('fname').value.trim();const email=document.getElementById('email').value.trim();const message=document.getElementById('message').value.trim();if(!fname||!email||!message){alert('Please fill in all required fields (Name, Email, Message).');return;}if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){alert('Please enter a valid email address.');return;}document.getElementById('form-success').style.display='block';['fname','lname','email','phone','company','message'].forEach(id=>document.getElementById(id).value='');document.getElementById('country').selectedIndex=0;document.getElementById('product').selectedIndex=0;setTimeout(()=>document.getElementById('form-success').style.display='none',7000);}
+
+
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+        e.preventDefault(); // ✅ Stop page redirect
+
+        const form = this;
+        const formData = new FormData(form);
+
+        fetch("https://formsubmit.co/7dc1ae70f7a1f3e9304af4efbc918f4f", {
+            method: "POST",
+            body: formData,
+            headers: {
+                "Accept": "application/json"
+            }
+        })
+            .then(response => {
+                if (response.ok) {
+                    form.reset(); // ✅ Clear form
+                    document.getElementById("form-success").style.display = "block";
+                } else {
+                    alert("Failed to send message. Please try again.");
+                }
+            })
+            .catch(error => {
+                alert("Network error. Please try again later.");
+                console.error(error);
+            });
+    });
+
+
 </script>
 </body>
 </html>
